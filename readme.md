@@ -20,13 +20,9 @@ Après le 00 (premières classes et methodes), le 01 c'est la **gestion mémoire
 ## Les 3 notions de base
 
 **1. stack vs heap**
-```
-   Zombie z("Foo");              Zombie* z = new Zombie("Foo");
-   - sur la STACK                - sur le HEAP
-   - détruit tout seul en        - vit jusqu'à ton delete
-     fin de bloc { }               (sinon : leak)
-   - meurt à la fin du scope     - survit après la fonction
-```
+<img width="2848" height="1190" alt="image" src="https://github.com/user-attachments/assets/20a5e707-b2fc-4d66-a448-fe827aa0f126" />
+
+
 Règle : objet utile **que dans cette fonction** → stack. Objet qui doit **survivre / être renvoyé** → heap.
 
 **2. `new`/`delete` ≠ `malloc`/`free`** : `new` appelle le **constructeur**, `delete` appelle le **destructeur**. C'est toute la diff (et `malloc`/`free`/`printf` sont **interdits**, note = 0).
